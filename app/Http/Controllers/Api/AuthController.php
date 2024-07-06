@@ -122,7 +122,7 @@ class AuthController extends Controller
         auth()->user()->tokens()->delete();
 
         return response()->json([
-            'message' => 'Logout successfull'
+            'message' => 'Logout successful'
         ]);
     }
 }
