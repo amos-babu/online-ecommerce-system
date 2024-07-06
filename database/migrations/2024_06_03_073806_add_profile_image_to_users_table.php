@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('profile_image')->nullable();
+            $table->string('phone_no')->nullable();
+            $table->string('address')->nullable();
         });
     }
 

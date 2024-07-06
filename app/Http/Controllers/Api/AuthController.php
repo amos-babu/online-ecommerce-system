@@ -18,7 +18,7 @@ class AuthController extends Controller
             'name'      => 'required|string|max:255',
             'email'     => 'required|string|max:255|unique:users',
             'username'  => 'required|string|max:255|unique:users',
-            'password'  => 'required|string|min:8'
+            'password'  => 'required|string|min:8|confirmed'
         ]);
 
 
@@ -48,7 +48,7 @@ class AuthController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'email' => 'required|string|max:255',
-            'password' => 'required|string|min:8'
+            'password' => 'required|string'
         ]);
 
         if ($validator->fails()) {
@@ -79,11 +79,9 @@ class AuthController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'name' => 'sometimes|string|max:255',
-            'username' => 'sometimes|string|max:255|unique:users,username,' . $user->id,
-            'email' => 'sometimes|string|email|max:255|unique:users,email,' . $user->id,
-            'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'password'  => 'sometimes|string|min:8'
+            'phone_no' => 'sometimes|regex:/^(\+\d{1,3}[- ]?)?\d{10}$/',
+            'address' => 'sometimes|string|max:255',
+            'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         if ($validator->fails()) {
@@ -93,26 +91,13 @@ class AuthController extends Controller
             ], 422);
         }
 
-        if ($request->has('name')) {
-            $user->name = $request->name;
+        if ($request->has('phone_no')) {
+            $user->phone_no = $request->phone_no;
         }
 
-        if ($request->has('username')) {
-            $user->username = $request->username;
+        if ($request->has('address')) {
+            $user->address = $request->address;
         }
-
-        if ($request->has('email')) {
-            $user->email = $request->email;
-        }
-
-        if ($request->has('password')) {
-            $user->password = $request->password;
-        }
-
-        // $user->name = $request->input('name');
-        // $user->username = $request->input('username');
-        // $user->email = $request->input('email');
-        // $user->password = $request->input('password');
 
         if ($request->hasFile('profile_image')) {
             if ($user->profile_image) {
@@ -132,9 +117,9 @@ class AuthController extends Controller
     }
 
 
-    public function logout(User $user)
+    public function logout(Request $request)
     {
-        $user->tokens()->delete();
+        auth()->user()->tokens()->delete();
 
         return response()->json([
             'message' => 'Logout successfull'
