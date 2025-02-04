@@ -15,18 +15,18 @@ This is a full-stack eCommerce application built with Laravel (REST API) and Rea
 ## Technologies Used
 **Backend (Laravel)**
 
-Laravel 10 (REST API)
-Sanctum (API Authentication)
-MySQL (Database)
-Eloquent ORM
-Laravel Migrations & Seeders
+- Laravel 10 (REST API)
+- Sanctum (API Authentication)
+- MySQL (Database)
+- Eloquent ORM
+- Laravel Migrations & Seeders
 
 **Frontend (React)**
 
-React 18
-React Router
-Axios (API Requests)
-Bootstrap (Styling)
+- React 18
+- React Router
+- Axios (API Requests)
+- Bootstrap (Styling)
 
 ## Installation
 **Backend (Laravel) Setup**
