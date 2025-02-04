@@ -1,14 +1,16 @@
-# Backend Repository
+# eCommerce Platform
 
 ## Project Overview
-This repository contains the backend code for the web application, built using **Laravel**. It provides a RESTful API for managing and processing data, handling authentication, and supporting real-time features.
+This is a full-stack eCommerce application built with Laravel (REST API) and React as the frontend. It includes user authentication, product management, cart functionality, and secure API access using Laravel Sanctum.
 
 ## Features
-- **Laravel Framework**: Robust and scalable backend.
-- **Authentication**: Secure user authentication and authorization.
-- **API Endpoints**: Provides data and functionality for the frontend.
-- **Real-Time Features**: Supports WebSocket for real-time communication.
-- **File Management**: Handles uploads and file processing.
+- ** User Authentication (Register, Login, Logout) using Laravel Sanctum
+✅ Product Management (CRUD operations)
+✅ Cart System (Add, Remove, Checkout)
+✅ Secure API with Authentication
+✅ React Router for seamless navigation
+✅ Axios for API requests
+✅ Bootstrap for styling
 
 ## Technologies Used
 - Laravel
