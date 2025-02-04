@@ -28,12 +28,6 @@ React Router
 Axios (API Requests)
 Bootstrap (Styling)
 
-## Setup Instructions
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/amos-babu/dxf_downloader_uploader-backend.git
-   ```
 ## Installation
 **Backend (Laravel) Setup**
 Clone the repository:
@@ -44,73 +38,62 @@ cd ecommerce-app/backend
 ```
 Install dependencies:
 
-bash
-Copy
-Edit
+```bash
 composer install
+```
 Configure environment:
 
-bash
-Copy
-Edit
+```bash
 cp .env.example .env
 php artisan key:generate
+```
 Set up database in .env, then run migrations:
 
-bash
-Copy
-Edit
+```bash
 php artisan migrate --seed
+```
 Install Laravel Sanctum & run the authentication setup:
 
-bash
-Copy
-Edit
+```bash
 php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
 php artisan migrate
+```
 Serve the API:
 
-bash
-Copy
-Edit
+```bash
 php artisan serve
-Frontend (React) Setup
+```
+**Frontend (React) Setup**
 Navigate to the frontend directory:
 
-bash
-Copy
-Edit
+```bash
 cd ../frontend
+```
 Install dependencies:
 
-bash
-Copy
-Edit
+```bash
 npm install
+```
 Start the React development server:
 
-bash
-Copy
-Edit
+```bash
 npm run dev
-Usage
-Visit http://localhost:8000/api to test API endpoints.
-Open http://localhost:5173 to access the React frontend.
-Use Postman or Axios for API testing.
-API Authentication
+```
+
+**Usage**
+
+- Visit **http://localhost:8000/api** to test API endpoints.
+- Open **http://localhost:5173** to access the React frontend.
+- Use Postman or Axios for API testing.
+  
+**API Authentication**
 All API requests require a Bearer token after login.
 Include the token in the Authorization header:
-js
-Copy
-Edit
+```bash
 axios.get('/api/products', {
   headers: { Authorization: `Bearer YOUR_ACCESS_TOKEN` }
 })
-Contributing
-Contributions are welcome! Fork the repo and submit a pull request.
-
-License
-This project is open-source and available under the MIT License.
+```
 
 ## Deployment
 To deploy the backend application, you can use platforms like **AWS**, **DigitalOcean**, or **Heroku**. Ensure to:
