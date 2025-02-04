@@ -4,18 +4,29 @@
 This is a full-stack eCommerce application built with Laravel (REST API) and React as the frontend. It includes user authentication, product management, cart functionality, and secure API access using Laravel Sanctum.
 
 ## Features
-- **User Authentication** (Register, Login, Logout) using Laravel Sanctum
+- ✅ **User Authentication** (Register, Login, Logout) using Laravel Sanctum
 - ✅ **Product Management** (CRUD operations)
-✅ Cart System (Add, Remove, Checkout)
-✅ Secure API with Authentication
-✅ React Router for seamless navigation
-✅ Axios for API requests
-✅ Bootstrap for styling
+- ✅ **Cart System** (Add, Remove, Checkout)
+- ✅ **Laravel Sanctum** Secure API with Authentication
+- ✅ **React Router** for seamless navigation
+- ✅ **Axios** for API requests
+- ✅ **Bootstrap** for styling
 
 ## Technologies Used
-- Laravel
-- SQlite (or other DBMS if applicable)
-- Laravel Sanctum for API authentication
+**Backend (Laravel)**
+
+Laravel 10 (REST API)
+Sanctum (API Authentication)
+MySQL (Database)
+Eloquent ORM
+Laravel Migrations & Seeders
+
+**Frontend (React)**
+
+React 18
+React Router
+Axios (API Requests)
+Bootstrap (Styling)
 
 ## Setup Instructions
 
@@ -23,40 +34,83 @@ This is a full-stack eCommerce application built with Laravel (REST API) and Rea
    ```bash
    git clone https://github.com/amos-babu/dxf_downloader_uploader-backend.git
    ```
+## Installation
+**Backend (Laravel) Setup**
+Clone the repository:
 
-2. **Navigate to the project directory:**
-   ```bash
-   cd backend-repo
-   ```
+```bash
+git clone https://github.com/yourusername/ecommerce-app.git
+cd ecommerce-app/backend
+```
+Install dependencies:
 
-3. **Install dependencies:**
-   ```bash
-   composer install
-   ```
+bash
+Copy
+Edit
+composer install
+Configure environment:
 
-4. **Copy the `.env.example` file and configure your environment variables:**
-   ```bash
-   cp .env.example .env
-   ```
-   Update the following:
-   - Database credentials
-   - API URL
-   - Real-time broadcast driver (e.g., Pusher)
+bash
+Copy
+Edit
+cp .env.example .env
+php artisan key:generate
+Set up database in .env, then run migrations:
 
-5. **Generate the application key:**
-   ```bash
-   php artisan key:generate
-   ```
+bash
+Copy
+Edit
+php artisan migrate --seed
+Install Laravel Sanctum & run the authentication setup:
 
-6. **Run migrations:**
-   ```bash
-   php artisan migrate
-   ```
+bash
+Copy
+Edit
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+php artisan migrate
+Serve the API:
 
-7. **Start the development server:**
-   ```bash
-   php artisan serve
-   ```
+bash
+Copy
+Edit
+php artisan serve
+Frontend (React) Setup
+Navigate to the frontend directory:
+
+bash
+Copy
+Edit
+cd ../frontend
+Install dependencies:
+
+bash
+Copy
+Edit
+npm install
+Start the React development server:
+
+bash
+Copy
+Edit
+npm run dev
+Usage
+Visit http://localhost:8000/api to test API endpoints.
+Open http://localhost:5173 to access the React frontend.
+Use Postman or Axios for API testing.
+API Authentication
+All API requests require a Bearer token after login.
+Include the token in the Authorization header:
+js
+Copy
+Edit
+axios.get('/api/products', {
+  headers: { Authorization: `Bearer YOUR_ACCESS_TOKEN` }
+})
+Contributing
+Contributions are welcome! Fork the repo and submit a pull request.
+
+License
+This project is open-source and available under the MIT License.
 
 ## Deployment
 To deploy the backend application, you can use platforms like **AWS**, **DigitalOcean**, or **Heroku**. Ensure to:
