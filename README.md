@@ -4,8 +4,8 @@
 This is a full-stack eCommerce application built with Laravel (REST API) and React as the frontend. It includes user authentication, product management, cart functionality, and secure API access using Laravel Sanctum.
 
 ## Features
-- ** User Authentication (Register, Login, Logout) using Laravel Sanctum
-✅ Product Management (CRUD operations)
+- **User Authentication** (Register, Login, Logout) using Laravel Sanctum
+- ✅ **Product Management** (CRUD operations)
 ✅ Cart System (Add, Remove, Checkout)
 ✅ Secure API with Authentication
 ✅ React Router for seamless navigation
