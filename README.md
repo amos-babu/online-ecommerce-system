@@ -33,8 +33,8 @@ This is a full-stack eCommerce application built with Laravel (REST API) and Rea
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/ecommerce-app.git
-cd ecommerce-app/backend
+git clone https://github.com/amos-babu/online-ecommerce-system
+cd ecommerce-app
 ```
 Install dependencies:
 
